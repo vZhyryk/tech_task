@@ -1,0 +1,75 @@
+:root {
+    /* general ----------------------------------------------------*/
+    --primary_font_size: 14px;
+    --title_font_size: 18px;
+    --secondary_font_size: 12px;
+    --mobile_font_size: 10px;
+    --title_font_weight: 500;
+    --primary_font_family: Roboto, sans-serif;
+
+    /* ---------------------------------------------*/
+    --primary_background_color: #f0f8ff;
+    --secondary_background_color: #3a5ba0;
+    --additional_background_color: #ffffff;
+    --light_background_color: #e0e0e0;
+
+    --primary_font_color: #333333;
+    --secondary_font_color: #ffffff;
+    --title_font_color: #2e2e2e;
+
+    --primary_border_color: #dfdfe1;
+    --hover_border_color: #4a6fa5;
+    --primary_box_shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+    --primary_transition: all 0.2s ease;
+    --modal_backdrop_bg_color: rgba(0, 0, 0, 0.5);
+
+    /* for components---------------------------------------------*/
+    --homepage_background_color: var(--primary_background_color);
+    --header_background_color: var(--secondary_background_color);
+    --footer_background_color: var(--secondary_background_color);
+    --header_font_color: var(--secondary_font_color);
+    --footer_font_color: var(--secondary_font_color);
+
+    --main_input_border_color: var(--primary_border_color);
+    --main_input_hover_border_color: var(--hover_border_color);
+
+    --list_border_color: var(--hover_border_color);
+    --card_background_color: var(--additional_background_color);
+
+    --load_more_btn_font_color: var(--secondary_background_color);
+    --load_more_btn_bg_color: var(--secondary_font_color);
+    --load_more_hover_btn_font_color: var(--secondary_font_color);
+    --load_more_hover_btn_bg_color: var(--secondary_background_color);
+
+    --type_badge_bg_color: var(--secondary_background_color);
+    --type_badge_font_color: var(--secondary_font_color);
+
+    --stat_bar_fill_bg_color: linear-gradient(90deg, var(--secondary_background_color), var(--hover_border_color));
+
+
+}
+
+body {
+    /* flow */
+    overflow: hidden;
+
+    /* margins & paddings */
+    margin: 0;
+
+    /* Background */
+    background: var(--homepage_background_color);
+
+    /* Fonts */
+    color: var(--primary_font_color);
+    font-family: var(--primary_font_family);
+}
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: var(--primary_transition);
+}
+.fade-enter,
+.fade-leave-to {
+    opacity: 0;
+}

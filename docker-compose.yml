@@ -1,0 +1,49 @@
+version: "3.8"
+
+services:
+    backend:
+        build: ./backend
+        ports:
+            - "${PORT}:${PORT}"
+        environment:
+            - PORT=${PORT}
+            - POKEAPI_BASE_URL=${POKEAPI_BASE_URL}
+            - API_KEY=${API_KEY}
+        env_file:
+            - .env
+        container_name: node-backend
+        restart: unless-stopped
+        networks:
+            - app-network
+        healthcheck:
+            test: ["CMD", "curl", "-f", "http://localhost:${PORT}"]
+            interval: 30s
+            timeout: 5s
+            retries: 3
+    frontend:
+        build:
+            context: ./frontend
+            args:
+                VITE_APP_BACKEND_URL: ${VITE_APP_BACKEND_URL}
+                VITE_API_KEY: ${API_KEY}
+        ports:
+            - "8080:80"
+        depends_on:
+            - backend
+        env_file:
+            - .env
+
+        restart: unless-stopped
+        container_name: vue-frontend
+
+        networks:
+            - app-network
+        healthcheck:
+            test: ["CMD", "curl", "-f", "http://localhost"]
+            interval: 30s
+            timeout: 5s
+            retries: 3
+
+networks:
+    app-network:
+        driver: bridge
