@@ -28,6 +28,22 @@ A modern, responsive Pokemon discovery application built with Vue.js 3 and Expre
 
 ### Docker and Docker Compose
 
+**Before start add .env file in root**
+Example:
+```env
+# Backend Configuration
+PORT=3000
+
+# API Security
+API_KEY=some_api_key
+
+# PokeAPI Configuration
+POKEAPI_BASE_URL=https://pokeapi.co/api/v2
+
+# Frontend Configuration
+VITE_APP_BACKEND_URL=http://localhost:${PORT}
+```
+
 1. Prod
 
 ```bash
